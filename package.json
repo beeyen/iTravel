@@ -1,23 +1,19 @@
 {
   "name": "travel-site",
   "version": "1.0.0",
-  "description": "example travel site",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/beeyen/iTravel.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/beeyen/iTravel/issues"
-  },
-  "homepage": "https://github.com/beeyen/iTravel",
   "dependencies": {
-    "jquery": "^3.1.1",
-    "normalize.css": "^5.0.0"
+    "jquery": "^2.2.3",
+    "normalize.css": "^4.1.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "browser-sync": "^2.12.8",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.1.1",
+    "gulp-watch": "^4.3.5",
+    "postcss-import": "^8.1.2",
+    "postcss-mixins": "^4.0.2",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "^1.2.0"
   }
 }
