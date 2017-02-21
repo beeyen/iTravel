@@ -1,0 +1,14 @@
+/* Do not edit modules _sprite.css, since it is auto generate by gulp
+instead edit sprite.js in gulp/tasks folder */
+{{#shapes}}
+    {{#first}}
+    .icon {
+        background-image: url('/temp/sprite/css/{{{sprite}}}');
+    }
+    {{/first}}
+    .icon--{{base}} {
+        width: {{width.outer}}px;
+        height: {{height.outer}}px;
+        background-position: {{position.relative.xy}};
+    }
+{{/shapes}}
