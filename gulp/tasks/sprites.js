@@ -39,22 +39,25 @@ gulp.task('createSprite', ['clean'], function() {
         .pipe(gulp.dest('./app/temp/sprite'));
 });
 
-gulp.task('createPngCopy', ['copySpriteGraphic'], function() {
+gulp.task('createPngCopy', ['createSprite'], function() {
     return gulp.src('./app/temp/sprite/css/**/*.svg')
         .pipe(svg2png())
         .pipe(gulp.dest('./app/temp/sprite/css'));
-})
-
-// this copy task did not work :(
-gulp.task('copySpriteGraphic',  ['createSprite'], function() {
-    return gulp.src('./app/temp/sprite/css/**/*.svg')
-        pipe(gulp.dest('./app/assets/images'));
 });
 
-gulp.task('copySprite', ['createSprite'],  function() {
+gulp.task('copySpriteGraphic',  ['createPngCopy'], function() {
+    return gulp.src('./app/temp/sprite/css/**/*.{svg,png}')
+        .pipe(gulp.dest('./app/assets/images/sprite'));
+});
+
+gulp.task('copySpriteCSS', ['createSprite'],  function() {
     return gulp.src('./app/temp/sprite/css/*.css')
         .pipe(rename('_sprite.css'))
         .pipe(gulp.dest('./app/assets/styles/modules'));
 });
 
-gulp.task('icons', ['clean', 'createSprite', 'createPngCopy', 'copySprite']);
+gulp.task('endClean', function() {
+    return del('./app/temp/sprite');
+})
+
+gulp.task('icons', ['clean', 'createSprite', 'createPngCopy', 'copySpriteGraphic', 'copySpriteCSS', 'endClean']);

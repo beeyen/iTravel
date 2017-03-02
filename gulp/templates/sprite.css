@@ -3,11 +3,11 @@ instead edit sprite.js in gulp/tasks folder */
 {{#shapes}}
     {{#first}}
     .icon {
-        background-image: url('/temp/sprite/css/{{{sprite}}}');
+        background-image: url('/assets/images/sprite/{{{sprite}}}');
     }
 
     .no-svg .icon {
-        background-image: url('/temp/sprite/css/{{#replaceSvgWithPng}}{{{sprite}}}{{/replaceSvgWithPng}}');
+        background-image: url('/assets/images/sprite/{{#replaceSvgWithPng}}{{{sprite}}}{{/replaceSvgWithPng}}');
     }
     {{/first}}
     .icon--{{base}} {

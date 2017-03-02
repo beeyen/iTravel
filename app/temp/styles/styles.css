@@ -985,11 +985,11 @@ a {
 instead edit sprite.js in gulp/tasks folder */
 
 .icon {
-        background-image: url('/temp/sprite/css/sprite-8eb89099.svg');
+        background-image: url('/assets/images/sprite/sprite-8eb89099.svg');
     }
 
 .no-svg .icon {
-        background-image: url('/temp/sprite/css/sprite-8eb89099.png');
+        background-image: url('/assets/images/sprite/sprite-8eb89099.png');
     }
 
 .icon--clear-view-escapes {
