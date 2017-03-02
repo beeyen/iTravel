@@ -5,6 +5,10 @@ instead edit sprite.js in gulp/tasks folder */
     .icon {
         background-image: url('/temp/sprite/css/{{{sprite}}}');
     }
+
+    .no-svg .icon {
+        background-image: url('/temp/sprite/css/{{#replaceSvgWithPng}}{{{sprite}}}{{/replaceSvgWithPng}}');
+    }
     {{/first}}
     .icon--{{base}} {
         width: {{width.outer}}px;
